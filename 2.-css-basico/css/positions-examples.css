@@ -1,0 +1,73 @@
+/* Primer Ejercicio */
+body {
+  margin: 0;
+  /* padding-top: 50px; */
+}
+
+.header {
+  background-color: mistyrose;
+  width: 100%;
+  height: 50px;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+}
+
+/* Simpre usa esto para tus cabeceras */
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.hero-image {
+  background-color: palegoldenrod;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Segundo Ejercicio */
+.slide {
+  background-color: paleturquoise;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide:nth-child(odd) {
+  background-color: palevioletred;
+}
+
+.slide-title {
+  background-color: palegreen;
+  padding-top: 16px;
+  text-align: center;
+  position: sticky;
+  top: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Tercer Ejercicio */
+.modal-window {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  color: white;
+  display: none;
+}
+
+.modal-window:target {
+  display: block;
+}
+
+/* Ejercicio 4 */
+.box {
+  background-color: sandybrown;
+  /* Loa margen aceptan valores positivos y negativos */
+  /* Los padding solo aceptan valores positivos */
+}
