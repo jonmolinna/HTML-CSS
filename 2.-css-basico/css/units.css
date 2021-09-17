@@ -1,0 +1,151 @@
+/*
+Unidades de Medida
+    1. Absolutas (Su valor no cambia, son unidades del mundo real)
+        pc, cm, mm, in, Q
+        pt(1/72in)
+        px(1/96in)
+    2. Relativas (Su valor es relativo a un contexto) 
+    em, rem, ex, ch - al tamaño de la fuente
+        em - basada en la anchura de la "m" de la fuente del elemento.
+        rem - basada en la anchura de la "m" de la fuente del elemento raiz (html).
+        ex - basada en la altura de la "x" de la fuente del elemento.
+        ch - basada en la anchura del "O" de la fuente del elemento.
+        % - al tamaño del contenedor
+    vw, vh, vmin, vmax - al tamaño del viewport.
+        vw - ancho del viewport van de 1 al 100
+        vh - alto del viewport van de 1 a 100
+        vmax - entre vw y vh toma el que tenga mayor valor.
+        vmin - entre vw y vh toma el que tenga menor valor.
+
+Conversiones entre unidades => http://pxtoem.com/
+*/
+html {
+  box-sizing: border-box;
+  font-size: 20px;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/***************************** PIXELES ****************************/
+.pixels {
+  background-color: cadetblue;
+  width: 500px;
+  height: 400px;
+  padding: 20px;
+  font-size: 32px; /*No se recomienda usar pixeles en fuentes*/
+  border: thick solid rebeccapurple;
+}
+
+/***************************** EMS ****************************/
+/*
+Los ems se basan en el tamaño de la fuente (font size) que tiene asignado el contenedor padre.
+Los margin, padding, width, heigt tendra como referencia del hijo o del padre de su fuente (font-size).
+*/
+.ems {
+  background-color: cadetblue;
+  font-size: 24px;
+  padding: 1em 0.5em;
+  border: 5px solid rebeccapurple;
+}
+
+.em-child {
+  background-color: salmon;
+  border: 5px solid beige;
+  margin: 0.5em; /* 24px */
+  padding: 1em; /* 48px */
+  font-size: 2em; /* 48px */
+}
+
+/***************************** REMS ****************************/
+/*
+Los rems se basan en el tamaño de la fuente (font-size) de la raiz (html)
+*/
+.rems {
+  background-color: cadetblue;
+  font-size: 24px;
+  padding: 1rem 0.5rem;
+  border: 5px solid rebeccapurple;
+}
+
+.rem-child {
+  background-color: salmon;
+  border: 5px solid beige;
+  margin: 0.5rem;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+/***************************** EX ****************************/
+.exs {
+  background-color: cadetblue;
+  font-size: 24px;
+  padding: 1ex 0.5ex;
+  border: 5px solid rebeccapurple;
+}
+
+.ex-child {
+  background-color: salmon;
+  border: 5px solid beige;
+  margin: 0.5ex;
+  padding: 1ex;
+  font-size: 2ex;
+}
+
+/***************************** CHs ****************************/
+/*
+Los chs se basan en el tamaño del caracter 0, se usan mas en el formulario
+tambien se usa para elementos de cierta caracter como boton 5ch.
+*/
+.chs {
+  background-color: cadetblue;
+  width: 10ch;
+}
+
+/***************************** PORCENTAJES ****************************/
+/*
+Los % toman como referencia al font-size del HTML como el 100%
+*/
+.percentages {
+  background-color: darkkhaki;
+  padding: 5%;
+  margin: 20% 10%;
+  width: 80%;
+  font-size: 100%;
+  width: 80%;
+}
+
+/***************************** VIEWPORT ****************************/
+.viewport {
+  background-color: darkcyan;
+  width: 50vw;
+  /* Recuerda que la etiqueta body tiene margenes por defecto y recuerda que las barras
+  de scroll del navegador tambien forman parte del viewport */
+  width: 100vw;
+  width: 100%;
+  height: 50vh;
+  height: 100vh;
+  font-size: 5vw;
+}
+
+.vmax,
+.vmin {
+  background-color: darksalmon;
+  border: thick solid black;
+  width: 50vmax;
+  height: 50vmin;
+}
+
+/***************************** Recomendaciones ****************************/
+/*
+- al font-size del HTML defina en px.
+- al font-size de los otro elementos defina en rem.
+*/
