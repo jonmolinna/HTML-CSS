@@ -1,0 +1,62 @@
+:root {
+  --default-bg-color: skyblue;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/***************** FUNCION VAR *************************/
+.custom-props-1 {
+  --primary-color: gray;
+  --font-size: 32px;
+  background-color: var(--primary-color);
+}
+
+.custom-props-2 {
+  background-color: var(--default-bg-color);
+}
+
+.custom-props-3 {
+  font-size: var(--font-size);
+}
+
+.title-props {
+  --primary-color: navy;
+  color: var(--primary-color, orange);
+  background-color: var(--default-bg-color);
+}
+
+/***************** FUNCION URL *************************/
+
+/***************** FUNCION CALC *************************/
+.ch-10 {
+  --padding-size: 2ch;
+  --num-ch: 10ch;
+  background-color: var(--default-bg-color);
+  width: 10ch;
+  font-size: 2rem;
+  padding: var(--padding-size);
+  width: calc(10ch + 2ch * 2);
+  width: calc(var(--num-ch) + var(--padding-size) * 2);
+}
+
+/***************** FUNCION MIN & MAX *************************/
+.min-max {
+  background-color: var(--default-bg-color);
+  margin-top: 1rem;
+  border: 1px solid red;
+  width: min(300px, 20vw, 20rem);
+  height: max(200px, 25vh);
+}
+
+/***************** FUNCION CLAMP clamp(min, ideal, max) *************************/
+h1 {
+  font-size: clamp(2rem, 1rem + 3vw, 3rem);
+}
