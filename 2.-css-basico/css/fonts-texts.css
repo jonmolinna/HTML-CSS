@@ -1,0 +1,135 @@
+/*
+        Fuentes y Textos (Font and Text)
+Los estilos de la fuente:
+    - font-family
+    - font-size
+    - font-weight => grosor de la tipografia
+    - font-style => tipo de tipografia
+    - font-variant => convierte en mayuscula
+    - line-height => es la separacion de altura de los parrafos
+    - font => es un shourfat
+*/
+
+.font {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: sans-serif;
+  font-size: 32px;
+  font-weight: 100;
+  font-style: normal;
+  font-variant: small-caps;
+}
+
+/**************** FUENTES EXTERNAS **********************/
+/*
+Formato woff o woff2 - Web Open Font Format
+
+font-display:
+    auto - permite que el navegador utilice el metodo predeterminado que suele ser block.
+    block - oculta brevemente el texto hasta que la fuente haya sido descargada por completo.
+    swap - indica al navegador que utilice la fuente alternativa para mostrar el texto hasta que la fuente
+        personalizada se haya cargado por completo.
+    fallback - es una mezcla de auto y swap.
+    optional - ocultara el texto, luego lo cargara con la fuente alternativa y finalmente aplicara la fuente personalizada.
+*/
+
+@font-face {
+  font-family: "Chalet";
+  src: url("../assets/Chalet.woff") format("woff");
+  font-display: swap;
+  /* src: url("../assets/Chalet.woff") format("woff"),
+    url("../assets/Chalet.woff2") format("woff2"); */
+}
+
+.chalet {
+  font-family: "Chalet", sans-serif;
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: "Pecita";
+  src: url("../assets/Pecita.woff") format("woff");
+  font-display: swap;
+}
+
+.pecita {
+  font-family: "Pecita", sans-serif;
+  font-size: 2rem;
+}
+
+/**************** GOOGLE FONTS **********************/
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+}
+
+/*************************************** Textos ****************************/
+/*
+Los estilos del Texto son:
+    - text-decoration
+    - text-indent
+    - text-overflow => para que funcione debe tener overflow:hidden y while-space:nowrap;
+
+    - text-transform
+    - letter-spacing
+    - white-space
+    - word-break
+    - word-spacing
+    - writing-mode
+*/
+.text {
+  font-size: 2rem;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 3rem; /*Da separacion al letra inicio de la palabra*/
+  text-transform: capitalize;
+  /* letter-spacing: 0.5ch; */
+}
+
+.text a {
+  text-decoration: none;
+}
+
+.text-overflow {
+  background-color: blanchedalmond;
+  border: thin solid black;
+  padding: 1rem;
+  width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.white-space {
+  white-space: pre;
+}
+
+.word-spacing {
+  font-size: 2rem;
+  word-spacing: 1rem;
+}
+
+/****************  GOOGLE ICONS ****************************/
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
