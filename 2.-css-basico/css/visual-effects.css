@@ -1,0 +1,295 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.box {
+  border: thick solid #000;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5rem;
+}
+
+/***************** BOX SHADOW and TEXT SHADON ****************/
+/* 
+box-shadow: mov-x mov-y blur-radius spread-blur color inset/outset;
+text-shadow: mov-x mov-y blur-radius color; 
+filter: drop-shadow(mov-x mov-y blur-radius color);
+*/
+.shadows {
+  font-size: 2rem;
+  text-align: center;
+  box-shadow: 1rem 1rem 1rem 1rem #333;
+  box-shadow: 1rem 1rem 1rem 1rem #f00 inset;
+  box-shadow: 1rem 1rem 2rem 0.5rem #0007;
+  text-shadow: -1rem -1rem 0.25rem hotpink;
+}
+
+/***************** SOMBRAS MULTIPLES ****************/
+.shadows-multiple {
+  font-size: 2rem;
+  text-align: center;
+  box-shadow: 1rem 1rem 1rem 1rem #0005, -0.5rem -0.5rem 0.5rem 2rem #f00;
+  text-shadow: -1rem -1rem 0.25rem hotpink, 1rem 1rem 0.25rem green;
+}
+
+/***************** FILTER DROP SHADOW ****************/
+.drop-shadow {
+  width: 600px;
+  height: auto;
+}
+
+.drop-shadow img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 1rem 1rem 1rem 1rem #f00;
+  filter: drop-shadow(1rem 1rem 1rem orangered);
+}
+
+/***************** LINEAR GRADIENT ****************/
+/*
+Link => https://cssgradient.io/
+*/
+.linear-gradient {
+  background-image: linear-gradient(red, green);
+  background-image: linear-gradient(red, green, blue);
+  background-image: linear-gradient(0deg, red, green, blue);
+  background-image: linear-gradient(20deg, red, green, blue);
+  background-image: linear-gradient(45deg, red, green, blue);
+  background-image: linear-gradient(to right, red, green, blue);
+  background-image: linear-gradient(to top, red, green, blue);
+  background-image: linear-gradient(to top left, red, green, blue);
+  background-image: linear-gradient(to bottom right, red, green, blue);
+  background-image: linear-gradient(90deg, red 30%, green 60%, blue);
+  background-image: linear-gradient(90deg, green 33%, white 34% 67%, red 68%);
+}
+
+/***************** RADIAL GRADIENT ****************/
+.radial-gradient {
+  background-image: radial-gradient(cyan, magenta);
+  background-image: radial-gradient(cyan, magenta, yellow);
+  background-image: radial-gradient(circle 5rem, cyan, magenta, yellow);
+  background-image: radial-gradient(
+    circle 100px,
+    cyan 30%,
+    magenta 60%,
+    yellow 90%
+  );
+  background-image: radial-gradient(
+    circle 100px at top,
+    cyan 30%,
+    magenta 60%,
+    yellow 90%
+  );
+  background-image: radial-gradient(
+    circle 100px at bottom left,
+    cyan 30%,
+    magenta 60%,
+    yellow 90%
+  );
+  background-image: radial-gradient(
+    ellipse 100px 50px,
+    cyan 30%,
+    magenta 60%,
+    yellow 90%
+  );
+  background-image: radial-gradient(circle 100px, red 50%, white 50%);
+}
+
+/***************** DEGRADADOS CONICOS ****************/
+.conic-gradient {
+  background-image: conic-gradient(red, green);
+  background-image: conic-gradient(red, green, blue);
+  background-image: conic-gradient(red 0% 50%, green 60%, blue 80%);
+  background-image: conic-gradient(
+    red 0deg 90deg,
+    green 120deg 240deg,
+    blue 270deg
+  );
+  background-image: conic-gradient(
+    from 90deg,
+    red 0deg 90deg,
+    green 120deg 240deg,
+    blue 270deg
+  );
+  background-image: conic-gradient(
+    from 90deg,
+    red 0deg 120deg,
+    white 120deg 240deg,
+    blue 240deg
+  );
+}
+
+/***************** REPETIR DEGRADADOS ****************/
+.repeat-gradient-linear {
+  background-image: repeating-linear-gradient(
+    red 0 10px,
+    green 10px 20px,
+    blue 20px 30px
+  );
+  background-image: repeating-linear-gradient(
+    90deg,
+    red 0 10px,
+    green 10px 20px,
+    blue 20px 30px
+  );
+}
+
+.repeat-gradient-radial {
+  background-image: repeating-radial-gradient(
+    circle 4rem,
+    cyan 0 10px,
+    magenta 10px 20px,
+    yellow 20px 30px
+  );
+}
+
+.repeat-gradient-conic {
+  background-image: repeating-conic-gradient(
+    red 0 8%,
+    yellow 8% 16%,
+    black 16% 24%
+  );
+}
+
+/***************** GRAFICAS CON DEGRADADOS ****************/
+.chart-gradient {
+  background-image: conic-gradient(cyan 0% 50%, magenta 50% 80%, yellow 80%);
+  border-radius: 50%;
+}
+
+.donut-gradient {
+  background-image: radial-gradient(white 30%, black 31%, transparent 33%),
+    conic-gradient(cyan 0% 50%, magenta 50% 80%, yellow 80%);
+  border-radius: 50%;
+}
+
+/***************** FILTROS (FILTER) ****************/
+.card {
+  border: thick solid #000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  width: 600px;
+  height: 400px;
+  margin-bottom: 3rem;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.filter {
+  /* Imagen Borroso */
+  filter: blur(1rem);
+  filter: blur(0.25rem);
+  filter: blur(0.15rem);
+  /* Brillo de la imagen (0-1)*/
+  filter: brightness(1);
+  filter: brightness(0.75);
+  filter: brightness(0.15);
+  /* Contraste de la imagen (0-1) */
+  filter: contrast(0.25);
+  filter: contrast(0.75);
+  filter: contrast(1);
+  /* Escala de grises (0-1 */
+  filter: grayscale(0);
+  filter: grayscale(0.25);
+  filter: grayscale(0.75);
+  filter: grayscale(1);
+  /* Escala Sepia (0-1) */
+  filter: sepia(0);
+  filter: sepia(0.25);
+  filter: sepia(0.75);
+  filter: sepia(1);
+  /* Colores HSL */
+  filter: hue-rotate(0deg);
+  filter: hue-rotate(30deg);
+  filter: hue-rotate(100deg);
+  filter: hue-rotate(200deg);
+  filter: hue-rotate(270deg); /* Color Rosado */
+  filter: hue-rotate(300deg);
+  filter: hue-rotate(330deg);
+  /* Invertir los Colores 0-1*/
+  filter: invert(0);
+  filter: invert(1);
+  /* Opacidad de la imagen */
+  filter: opacity(0);
+  filter: opacity(0.25);
+  filter: opacity(0.75);
+  filter: opacity(1);
+  /* Filtro de la Saturacion (0-1) */
+  filter: saturate(0);
+  filter: saturate(0.25);
+  filter: saturate(0.75);
+  filter: saturate(1);
+  filter: drop-shadow(1rem 1rem 1rem steelblue);
+}
+
+/***************** FILTROS MULTIPLES ****************/
+.filters-multiple {
+  filter: blur(0.1rem) hue-rotate(270deg) opacity(0.75) invert(1);
+}
+
+/***************** FILTROS A FONDO (BACKDROP FILTER) ****************/
+.relative {
+  position: relative;
+}
+
+.backdrop-filter,
+.backdrop-filter-multiple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.backdrop-filter h4 {
+  font-size: 2rem;
+  color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: grayscale(1);
+  backdrop-filter: sepia(1);
+  backdrop-filter: opacity(0.25);
+  backdrop-filter: hue-rotate(270deg);
+}
+
+.backdrop-filter-multiple h4 {
+  border-radius: 1rem;
+  padding: 2rem;
+  font-size: 3rem;
+  color: #fff;
+  background-color: rgba(255, 102, 255, 0.5);
+  backdrop-filter: blur(1rem) hue-rotate(240deg) opacity(0.75) invert(1);
+}
+
+/***************** MODO DARK/LIGHT CON FILTROS ****************/
+.dark-mode {
+  background-color: #fff;
+  color: #000;
+  filter: invert(1);
+}
+
+.dark-mode img {
+  filter: invert(1);
+}
+
+/* 2:08:50 */
