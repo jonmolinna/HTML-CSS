@@ -248,6 +248,12 @@ Link => https://cssgradient.io/
   position: relative;
 }
 
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .backdrop-filter,
 .backdrop-filter-multiple {
   position: absolute;
@@ -292,4 +298,102 @@ Link => https://cssgradient.io/
   filter: invert(1);
 }
 
-/* 2:08:50 */
+/***************** MODOS DE MEZCLA (MIX-BLEND-MODE) ****************/
+.blend-modes img {
+  mix-blend-mode: normal; /*default*/
+  mix-blend-mode: color;
+  mix-blend-mode: color-dodge;
+  mix-blend-mode: color-burn;
+  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
+  mix-blend-mode: saturation;
+  mix-blend-mode: luminosity;
+  mix-blend-mode: hue;
+  mix-blend-mode: exclusion;
+  mix-blend-mode: difference;
+  mix-blend-mode: hard-light;
+  mix-blend-mode: soft-light;
+  mix-blend-mode: lighten;
+  mix-blend-mode: overlay;
+  mix-blend-mode: darken; /*Se ve bien*/
+}
+
+.bg-blend-modes {
+  background-image: url("../assets/puesta-sol.jpg"),
+    url("../assets/BuenosDias.jpg");
+  background-size: cover;
+  background-blend-mode: normal;
+  background-blend-mode: overlay;
+  background-blend-mode: darken;
+}
+
+/***************** MÁSCARAS (CLIP-PATH) ****************/
+/*
+Link => https://bennettfeely.com/clippy/
+*/
+.clip-path {
+  clip-path: circle();
+  clip-path: circle(100px);
+  clip-path: circle(100px at top);
+  clip-path: circle(100px at bottom);
+  clip-path: circle(100px at right top);
+  clip-path: circle(100px at 0 0);
+  clip-path: circle(100px at 30%);
+  clip-path: circle(100px at 18% 60%);
+  clip-path: ellipse(200px 100px);
+  clip-path: ellipse(200px 100px at left);
+  clip-path: ellipse(200px 100px at left top);
+  clip-path: ellipse(200px 100px at 0 0);
+  clip-path: ellipse(200px 100px at 300px 50px);
+  clip-path: ellipse(200px 100px at 35% 60%);
+  clip-path: inset(2rem); /*Funciona como padding*/
+  clip-path: inset(4rem);
+  clip-path: inset(2rem 1rem);
+  clip-path: inset(3rem 2rem 1rem);
+  clip-path: inset(3rem 2rem 0.5rem);
+  clip-path: inset(1rem round 1rem); /*funciona como border-radius*/
+  clip-path: inset(1rem round 1rem 2rem);
+  clip-path: inset(1rem round 1rem 2rem 3rem);
+  clip-path: inset(1rem round 1rem 2rem 3rem 4rem);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/***************** FORMAS (SHAPE OUTSIDE) ****************/
+.shapes {
+  border: thick solid black;
+  padding: 1rem;
+  margin: 0 auto 5rem;
+  max-width: 800px;
+}
+
+.shapes img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.shape-1 {
+  margin: 4rem 2rem 4rem 0;
+  shape-outside: ellipse();
+  shape-outside: circle();
+}
+
+.shape-2 {
+  margin: 4rem 0 4rem 2rem;
+  shape-outside: ellipse();
+}
+
+.shape-3 {
+  margin: 2rem 12rem 0 0;
+  shape-outside: polygon(0 0, 65% 0, 52% 50%, 70% 100%, 0 100%, 0% 60%, 0 19%);
+}
