@@ -1,0 +1,105 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.slides {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.slide {
+  width: 100%;
+  height: inherit;
+  background-color: #1e2345;
+}
+
+.slide:nth-child(even) {
+  background-color: #0d4353;
+}
+
+.slide-container {
+  width: 80%;
+  height: inherit;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vw;
+  color: #d9e8f0;
+}
+
+/**************** Ajuste del Scroll Efecto Slides Verticales (scroll-snap-type & scroll-snap-align) ****/
+/*
+- Aplica al contenedor 
+- scroll-snap-type: [x | y | inline (x)| block (y) | both ] [mandatory | proximity];
+*/
+.slides {
+  scroll-snap-type: y proximity;
+  scroll-snap-type: block mandatory;
+}
+
+.slide {
+  scroll-snap-align: none;
+  scroll-snap-align: end;
+  scroll-snap-align: start;
+  scroll-snap-align: center;
+}
+
+/***  Ajuste del Scroll Efecto Carrusel Horizontal (scroll-snap-type & scroll-snap-align) ***/
+.carousel {
+  border: thick solid #d938f0;
+  width: 50%;
+  height: 50vh;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.carousel-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 100%);
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /*1*/
+  scroll-snap-type: x proximity; /*1*/
+}
+
+.carousel-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d4353;
+  scroll-snap-align: center; /*2*/
+}
+
+.carousel-slide:nth-child(even) {
+  background-color: #1e2345;
+}
+
+/********************* TEXTO CON DEGRADADO ***********************/
+.gradient-text {
+  background-image: linear-gradient(45deg, magenta, yellow);
+  -ms-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -ms-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
