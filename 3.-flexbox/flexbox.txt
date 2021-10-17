@@ -1,0 +1,82 @@
+            -----------------------------------------
+            Flex Container (Propiedades del Padre)
+            -----------------------------------------
+Define que una caja sera flexbox de bloque o flexbox de linea
+display: flex; => ocupa todo el espacio
+display: inline-flex => ocupa solo del contenido
+
+Define el eje principal (main axis) row - x, column - y
+flex-direction: row; => por defecto, empieza de derecha a izquierda.
+flex-direction: row-reverse; => se invierte el orden, empieza de izquierda a derecha.
+flex-direction: column; => empieza de arriba a abajo.
+flex-direction: column-reverse; => se invierte el order, de abajo a arriba.
+
+Define si la caja flexbox envuelve o NO a sus hijos
+flex-wrap: nowrap; => envuelve a todos los elementos hijos, sin importar el tamaño de este, en una sola fila o columna.
+flex-wrap: wrap; => envuelve a los elementos hijos en filas, por otro lado. Si respeta la dimension del hijo.
+
+flex-flow: column nowrap; es un shortcut de flexdirection y flex-wrap.
+flex-flow: column wrap;
+
+Define la alineacion de los elementos hijos. respecto del eje principal
+justify-content: flex-start; => por defecto, Los elementos aliniados al inicio.
+justify-content: center; => Los elementos se ponen al centro.
+justify-content: flex-end; => Los elementos se ponen al final
+justify-content: space-between; => Los elementos se ponen al centro, sin considerar las esquinas.
+justify-content: space-around; => Los elementos se ponen al centro, las equinas es la mitad de espacio del centro.
+justify-content: space-evenly; => Los elementos se ponen al centro, las esquinas y el espacio del centro tiene el mismo tamaño.
+
+Define la alineacion de los hijos en el eje transversal (cross axis), dentro de cada linea
+align-items: stretch; por defecto, los hijos ocupan todo el espacio del eje no principal.
+align-items: flex-start;
+align-items: flex-end;
+align-items: center;
+align-items: baseline;
+
+Define la alineacion de los hijos en el eje transversal (cross axis), 
+no funciona cuando los hijos estan en UNA sola linea (cuando flex:wrap; nowrap NO FUNCIONA)
+align-content: flex-start;
+align-content: flex-end;
+align-content: center;
+align-content: space-between;
+align-content: space-around;
+align-content: space-evenly;
+align-content: stretch;
+
+            -----------------------------------------
+            Flex Children (Propiedades del Hijo)
+            -----------------------------------------
+Cuando la caja flexbox tenga espacio sobrante, es la habilidad o el factor de crecer, 
+valor por defecto es 0, NO se aceptan valores negativos
+->flex-grow: 0;
+
+Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse, 
+valor por defecto es 1, NO se aceptan valores negativos
+->flex-shrink: 1; 
+
+Es el tamaño del elemento hijo dentro de la linea de la caja flexbox
+Si la caja flexbox tiene direccion de la fila, flex-basic representa el width
+Si la caja flexbox tiene direcion de columna, flex-basic representa el height
+valor por defecto auto
+->flex-basis: auto;
+
+Es un shorthand de la propiedades flex-grow, flex-shrink y flex-basis, en ese orden
+->flex:0 1 auto;
+
+Representa el orden que tendra los elementos hijos en la caja flexbox, valor por defecto 0
+Se aceptan valores positivos y negativos.
+Un valor menor siempre ira antes que un valor Mayor
+->order: 0;
+
+Sobreescribe el valor de la propiedad align-items solo para el elemento hijo especificado
+align-self: strech;
+align-self: flex-start;
+align-self: flex-end;
+align-self: center;
+align-self: baseline;
+
+
+Mayor Informacion:
+---------------------------------------------------
+https://css-tricks.com/snippets/css/
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
