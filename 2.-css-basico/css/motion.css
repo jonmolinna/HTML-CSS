@@ -11,6 +11,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+}
+
 .box {
   border: thick solid #000;
   margin-left: auto;
@@ -676,4 +680,149 @@ cubic-bezier => https://cubic-bezier.com/#.17,.67,.83,.67
   transform: rotate(-45deg) translate(0.4rem, -0.5rem);
 }
 
-/* 9:26:12 */
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  transition: transform 500ms linear;
+  /* transform: translate(0, -100%); de ARRIBA */
+  /* transform: translate(0, 100%); de ABAJO*/
+  /* transform: translate(100%, 0); de DERECHA */
+  transform: translate(-100%, 0);
+}
+
+.off-canvas-btn:checked ~ .off-canvas-menu {
+  transform: translate(0, 0);
+}
+
+.off-canvas-menu-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.off-canvas-link {
+  border-bottom: thin solid #d00;
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 300ms ease;
+}
+
+.off-canvas-link:first-child {
+  border-top: thin solid #d00;
+}
+
+.off-canvas-link:hover {
+  background-color: #d005;
+}
+
+/********* ejemplo 9 Ventana Modal ***********/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms linear;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  position: relative;
+  border: thick double #d00;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 3rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #d00;
+  transition: background-color 300ms linear, transform 300ms ease-in-out;
+}
+
+.modal-close:hover {
+  background-color: #a00;
+  transform: scale(1.2);
+}
+
+/********* ejemplo 10 Star Wars Intro ***********/
+.star-wars {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffb13a;
+  background-image: url("../assets/stars.gif");
+}
+
+.star-wars-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  animation: introStarWars 20s linear;
+}
+
+.star-wars h2,
+.star-wars h3 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.star-wars p {
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+@keyframes introStarWars {
+  0% {
+    transform: perspective(100vh) rotateX(15deg) translateY(100%);
+  }
+
+  100% {
+    transform: perspective(100vh) rotateX(25deg) translateY(-200%);
+  }
+}
