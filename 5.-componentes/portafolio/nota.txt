@@ -1,0 +1,28 @@
+Para subir a un repositorio
+----------------------------------------
+https://github.com/jonmolinna/maquetacion/portafolio-cv
+https://jonmolinna.github.io/maquetacion/portafolio-cv
+
+nombre de respositorio: maquetacion
+description: Repositorio de proyecto del taller de maquetacion
+
+git (dentro de la carpeta de maquetacion)
+--------------------------------------------
+touch README.md (crea un README.md)
+    # Taller de MaquetaciÓN
+    repositorio de proyectos de taller de maquetacion
+
+    ## Proyectos
+    -[Landing Page de tipo Portafolio CV](https://jonmolinna.github.io/maquetacion/portafolio-cv)
+
+git init
+git add .
+git commit -m "Primer Commit"
+git branch gh-pages (crea una rama para el hosting)
+git checkout gh-pages (permite cambiarme de rama a gh-pages)
+git remote add origin https://github.com/jonmolinna/maquetacion.git (vehincula la carpeta con el repositorio)
+git push -u origin gh-pages
+
+git add . (con toda la carpeta del portafolio)
+git commit -m "Subiendo Proyecto 1 LandingPage portafolio cv"
+git push
