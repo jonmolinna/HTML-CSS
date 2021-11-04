@@ -1,0 +1,41 @@
+/***********************  CONTENEDORES FLEXIBLES ***************************/
+/** selecciona al clase que inicie con box*/
+[class^="box"] {
+  margin: 3rem auto;
+  background-color: orangered;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+}
+
+.box-flexible {
+  width: 50%;
+  height: 20vh;
+}
+
+.box-flexible-2 {
+  max-width: 960px;
+  min-width: 280px;
+  max-height: 480px;
+  min-height: 280px;
+}
+
+.box-flexible-3 {
+  max-width: 960px;
+  min-width: 280px;
+  max-height: 480px;
+  min-height: 280px;
+  width: 300px; /*No los hagas ya que funcionara el responsible, ya que tiene mayor feralquia*/
+  height: 300px; /*No los hagas ya que funcionara el responsible, ya que tiene mayor feralquia*/
+}
+
+.box-flexible-4 {
+  max-width: 960px;
+  min-width: 280px;
+  max-height: 480px;
+  min-height: 280px;
+  width: 50%; /*No los hagas ya que funcionara el responsible, ya que tiene mayor feralquia*/
+  height: 20vh; /*No los hagas ya que funcionara el responsible, ya que tiene mayor feralquia*/
+}
