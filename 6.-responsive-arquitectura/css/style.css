@@ -39,3 +39,97 @@
   width: 50%; /*No los hagas ya que funcionara el responsible, ya que tiene mayor feralquia*/
   height: 20vh; /*No los hagas ya que funcionara el responsible, ya que tiene mayor feralquia*/
 }
+
+/***********************  Imágenes Responsivas ***************************/
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/***********************  Videos Responsivas ***************************/
+.responsive-media {
+  position: relative;
+  max-width: 100%;
+  height: 0;
+  /*
+  Formato widescreen 16:9
+  16 ---> 100%
+   9 ---> 56.25%
+  */
+  padding-bottom: 56.25%;
+}
+
+.responsive-media > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.aspect-ratio-16-9 {
+  background-color: rebeccapurple;
+  aspect-ratio: 16/9;
+}
+
+/***********************  Media Queries ***************************/
+@media print {
+  @page {
+    size: A6 landscape;
+  }
+
+  body {
+    font-size: 10pt;
+    font-family: sans-serif;
+    background-color: #000;
+    color: greenyellow;
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: black;
+    color: teal;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  html {
+    background-color: white;
+    color: darkblue;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: white;
+    color: black;
+  }
+}
+
+/* En Mobile First se usa min-width que significa lo minimo, del valor que des hacia arriba */
+@media screen and (min-width: 480px) {
+  html {
+    background-color: lightpink;
+  }
+}
+
+/* En Desktop First se usa max-width que significa lo maximo, del valor que des, hacia abajo */
+@media screen and (max-width: 1024px) {
+  html {
+    background-color: lightgreen;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    background-color: white;
+  }
+}
