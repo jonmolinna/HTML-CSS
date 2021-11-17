@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curso Responsive Design y Arquitectura CSS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+  
   <link rel="stylesheet" href="css/init.css">
+  <link rel="stylesheet" media="print" href="css/print.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -106,6 +108,8 @@
       </code></pre>
       <h3>Imágenes Responsivas</h3>
       <p>Simplemente adaptamos la imagen al tamaño de su contenedor.</p>
+      <img src="img/puesta-sol.jpg" alt="Puesta de Sol">
+
       <h4>Atributo <i>srcset</i> y <i>sizes</i></h4>
       <p>
         El propósito de estos atributos, es mejorar el rendimiento de carga, al colocar la misma imagen pero en
@@ -113,6 +117,28 @@
         tamaños y pesos,
         dependiendo del tamaño o la resolución de la pantalla.
       </p>
+      <!-- Por Resolucion de la Pantall-->
+      <img 
+        src="img/html5-3d-600.png" 
+        srcset="img/html5-3d-600.png 1x, img/html5-3d-900.png 1.5x, img/html5-3d-1200.png 2x" 
+        alt="HTML5"
+      >
+      <br>
+      <!-- Por ancho de Pantalla -->
+      <img 
+        src="img/html5-3d-600.png" 
+        srcset="img/html5-3d-600.png 600w, img/html5-3d-900.png 900w, img/html5-3d-1200.png 1200w" 
+        alt="HTML5"
+      >
+      <!-- Atributo Size -->
+      <img 
+        src="img/html5-3d-600.png" 
+        srcset="img/html5-3d-600.png 600w, img/html5-3d-900.png 900w, img/html5-3d-1200.png 1200w"
+        sizes="(max-width: 480px) 300px, (max-width: 600px) 480px, (max-width: 768px) 600px, (max-width: 1024px) 900px, (min-width: 1200px) 1200px"
+        alt="HTML5"
+      >
+
+      <!-- Etiqueta Picture -->
       <h4>Etiqueta <i>picture</i></h4>
       <p>
         El objetivo de esta etiqueta, no es sólo mostrar diferentes tamaños de la misma imagen,
@@ -120,10 +146,67 @@
         la
         pantalla y las diferencias en el diseño. Esto se conoce como "dirección de arte".
       </p>
+      <picture>
+        <source srcset="img/kitten-large.png" media="(min-width: 1024px)">
+        <source srcset="img/kitten-medium.png" media="(min-width: 600px)">
+        <img src="img/kitten-small.png" alt="kitten">
+      </picture>
+      <br>
+      <picture>
+        <source srcset="img/butterfly.webp" type="image/webp">
+        <img src="img/butterfly.jpg" alt="Mariposa">
+      </picture>
+
+      <!-- Videos Responsivos-->
       <h3>Videos Responsivos</h3>
+      <video src="assets/kenai.mp4" controls></video>
+      <div class="responsive-media">
+        <video src="assets/kenai.mp4" controls></video>
+      </div>
+      <video class="aspect-ratio-16-9" src="assets/kenai.mp4" controls></video>
+      <div class="aspect-ratio-16-9"></div>
+
+      <!-- Iframes Responsivos -->
       <h3>Iframes Responsivos </h3>
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/EH1I-8KyI9Y" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+      >
+      </iframe>
+      <br>
+      <div class="responsive-media">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/EH1I-8KyI9Y" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+      <iframe 
+          class="aspect-ratio-16-9"
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/EH1I-8KyI9Y" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        >
+      </iframe>
     </article>
+
     <hr>
+
+    <!--  MEDIA QUERIES  -->
     <article id="media-queries" class="full-screen">
       <h2><i>Media Queries</i></h2>
       <p>
@@ -132,7 +215,7 @@
         tenido cierto grado de capacidad para el reconocimiento de dispositivos mediante el uso de tipos de medios. Por
         ejemplo:
       </p>
-      <pre><code class="language-html">&lt;link rel="stylesheet" href="print.css" media="print"&gt;</code></pre>
+      <pre><code class="language-html">&lt;link rel="stylesheet" media="print" href="print.css"&gt;</code></pre>
       <p>
         Con <i>CSS3</i>, la <i>W3C</i> perfeccionó y mejoró los tipos de medios con características multimedia y con la
         capacidad de
