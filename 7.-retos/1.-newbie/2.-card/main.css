@@ -1,0 +1,160 @@
+html {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.content {
+  height: 100vh;
+  width: 100%;
+  background-color: hsl(233, 47%, 7%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 200px 1fr;
+  max-width: 250px;
+  background-color: hsl(244, 38%, 16%);
+  border-radius: 15px;
+  border: 1px solid hsl(244, 38%, 16%);
+}
+
+.card__header {
+  position: relative;
+}
+
+.card__img {
+  height: 200px;
+  border-radius: 15px 15px 0 0;
+}
+
+.card__img > img {
+  height: 200px;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: inherit;
+}
+
+.card__imgTransparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 15px 0 0;
+  background-color: hsl(277, 64%, 61%, 0.34);
+}
+
+.card__body {
+  padding: 20px;
+}
+
+.card__title {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  margin-top: -10px;
+}
+
+.card__title > span {
+  color: hsl(277, 64%, 61%);
+}
+
+.card__description {
+  color: hsla(0, 0%, 100%, 0.75);
+  text-align: center;
+  font-size: 12px;
+  margin-top: -10px;
+}
+
+.card__details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card__detail {
+  margin-top: -10px;
+}
+
+.card__detail > h3 {
+  color: hsl(0, 0%, 100%);
+}
+
+.card__detail > p {
+  color: hsla(0, 0%, 100%, 0.75);
+  text-transform: uppercase;
+  margin-top: -12px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 750px;
+    height: 300px;
+    border-radius: 15px;
+  }
+
+  .card > .card__body {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .card__img {
+    border-radius: 0 15px 15px 0;
+  }
+
+  .card__img > img {
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  .card__imgTransparent {
+    border-radius: 0 15px 15px 0;
+  }
+
+  .card__body {
+    padding: 40px 30px;
+  }
+
+  .card__title {
+    text-align: left;
+  }
+
+  .card__description {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .card__details {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .card__detail > h3 {
+    text-align: left;
+  }
+}
