@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/back.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/********************************** CARD - 1 ***********************************/
+.card {
+  width: 90%;
+  max-width: 440px;
+  color: #fff;
+  text-align: center;
+  padding: 50px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.card p {
+  font-size: 18px;
+  margin: 10px auto;
+  max-width: 330px;
+}
+
+.card .links svg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px 5px;
+  color: #fff;
+  transition: color 0.5s;
+}
+
+.card .links svg:hover {
+  color: #ff01cf;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  background: #fff;
+  color: #ff01cf;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin: 30px 0 10px;
+}
+
+/********************************** CARD - 2 ***********************************/
+.card__2 {
+  width: 380px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transform-style: preserve-3d; /**/
+  transition: transform 1s; /**/
+}
+
+.front-face {
+  backface-visibility: hidden; /**/
+}
+
+.front-face img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.back-face {
+  backface-visibility: hidden; /**/
+  background: #c62600;
+  color: #fff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transform: rotateY(180deg); /**/
+}
+
+.back-face h2 {
+  font-size: 37px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.back-face p {
+  font-size: 23px;
+  font-weight: 300;
+}
+
+.social-media svg {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  background: #e43a00;
+  border-radius: 50%;
+  margin: 25px 6px;
+}
+
+.social-media a {
+  text-decoration: none;
+}
+
+.btn-2 {
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+  background: #fff;
+  padding: 10px 50px;
+  border-radius: 25px;
+  margin: 80px auto 0;
+}
+
+.card__2:hover .card-inner {
+  transform: rotateY(-180deg); /**/
+}
