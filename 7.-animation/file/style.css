@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card {
+  padding: 10px;
+}
+
+.label-1 > svg {
+  height: 30px;
+  width: 30px;
+  background-color: aqua;
+}
+
+.file-1 {
+  display: none;
+}
